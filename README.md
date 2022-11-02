@@ -19,4 +19,6 @@ var app = builder.Build();
 app.UseLocalization();
 
 // Use other services
+
+app.Run();
 ```

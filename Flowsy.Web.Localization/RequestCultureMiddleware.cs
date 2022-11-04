@@ -15,7 +15,7 @@ public class RequestCultureMiddleware
 
     public async Task InvokeAsync(HttpContext context, IOptions<LocalizationOptions> options)
     {
-        var acceptedCulture = context.ResolveCulture(options) ?? CultureInfo.InstalledUICulture;
+        var acceptedCulture = context.ResolveCulture(options) ?? CultureInfo.CurrentUICulture;
         CultureInfo.CurrentCulture = acceptedCulture;
         CultureInfo.CurrentUICulture = acceptedCulture;
         await _next(context);
